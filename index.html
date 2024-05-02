@@ -6,28 +6,42 @@
     <style>
         .container {
             display: flex;
+            justify-content: space-between;
         }
-        .half {
-            flex: 1;
-            padding: 20px;
-            border-right: 1px solid black;
+        .report {
+            width: 49%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
         }
-        .bottom {
+        #difference {
             clear: both;
-            padding: 20px;
-            border-top: 1px solid black;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
         }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #difference {
+        clear: both;
+        margin: 20px auto; /* Ændrer marginen til auto for at centrere vandret */
+        padding: 10px;
+        border: 1px solid #ccc;
+        width: fit-content; /* Sætter bredden til at passe til indholdet */
+        }
+
     </style>
 </head>
 <body>
-    <h1>Medicin Produkt Sammenligning</h1>
+    <h1>Sammenligning af Medicin Rapporter</h1>
     <div class="container">
-        <div id="product1" class="half"></div>
-        <div id="product2" class="half"></div>
+        <div id="report1" class="report"></div>
+        <div id="report2" class="report"></div>
     </div>
-    <div id="difference" class="bottom"></div>
-    <button onclick="loadAndCompareData()">Sammenlign Produkter</button>
-
+    <div id="difference"></div>
+    <button onclick="loadAndCompareData()">Sammenlign Rapporter</button>
+    
     <script src="RHA.js"></script>
 </body>
 </html>
