@@ -1,21 +1,34 @@
-[
-    {
-        "navn": "Produkt A",
-        "købt": 150,
-        "anvendt": 120,
-        "smidt_ud": 30
-    },
-    {
-        "navn": "Produkt B",
-        "købt": 200,
-        "anvendt": 180,
-        "smidt_ud": 20
-    },
-    
-    {
-        "navn": "Produkt B",
-        "købt": 200,
-        "anvendt": 180,
-        "smidt_ud": 20
-    }
-]
+{
+    "rapport1": [
+        {
+            "medicinType": "Type A",
+            "købt": 150,
+            "anvendt": 120,
+            "smidt_ud": 20,
+            "penge_brugt": 5000
+        },
+        {
+            "medicinType": "Type B",
+            "købt": 100,
+            "anvendt": 80,
+            "smidt_ud": 15,
+            "penge_brugt": 3000
+        }
+    ],
+    "rapport2": [
+        {
+            "medicinType": "Type A",
+            "købt": 180,
+            "anvendt": 150,
+            "smidt_ud": 25,
+            "penge_brugt": 5500
+        },
+        {
+            "medicinType": "Type B",
+            "købt": 90,
+            "anvendt": 85,
+            "smidt_ud": 5,
+            "penge_brugt": 2800
+        }
+    ]
+}
