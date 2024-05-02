@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Medicin Produkt Sammenligning</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .half {
+            flex: 1;
+            padding: 20px;
+            border-right: 1px solid black;
+        }
+        .bottom {
+            clear: both;
+            padding: 20px;
+            border-top: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medicin Produkt Sammenligning</h1>
+    <div class="container">
+        <div id="product1" class="half"></div>
+        <div id="product2" class="half"></div>
+    </div>
+    <div id="difference" class="bottom"></div>
+    <button onclick="loadAndCompareData()">Sammenlign Produkter</button>
+
+    <script src="RHA.js"></script>
+</body>
+</html>

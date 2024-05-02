@@ -1,0 +1,21 @@
+[
+    {
+        "navn": "Produkt A",
+        "købt": 150,
+        "anvendt": 120,
+        "smidt_ud": 30
+    },
+    {
+        "navn": "Produkt B",
+        "købt": 200,
+        "anvendt": 180,
+        "smidt_ud": 20
+    },
+    
+    {
+        "navn": "Produkt B",
+        "købt": 200,
+        "anvendt": 180,
+        "smidt_ud": 20
+    }
+]
