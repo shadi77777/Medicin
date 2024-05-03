@@ -115,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     updateAfdelinger();  // Opdater afdelinger og afsnit når siden indlæses
+    wdsaaasd disad
 });
 
 function updateAfdelinger() {
