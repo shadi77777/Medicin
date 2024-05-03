@@ -11,6 +11,7 @@
             "beløb": 40000
         }
     ],
+
     "forbrug": [
         {
             "medicinType": "Præperat A",
@@ -21,7 +22,7 @@
             "forbrugt": 250,
         }
     ]
-        "kassation": [
+       "kassation": [
         {
             "medicinType": "Præperat A",
             "kasseret": 50,
@@ -31,7 +32,7 @@
             "købt": 100,
         }
     ]
-        "lagerbeholdning": [
+        "lagerbeholdning": [    
         {
             "medicinType": "Præperat A",
             "stk": 30,

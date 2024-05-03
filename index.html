@@ -14,23 +14,16 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
         }
-        #difference {
-            clear: both;
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
+        #difference-container {
+            max-width: 800px; /* Begræns containerens bredde */
+            margin: 20px auto; /* Centrer containeren */
+        }
+        #difference-chart {
+            max-height: 600px; /* Begræns grafens højde */
         }
         body {
             font-family: Arial, sans-serif;
         }
-        #difference {
-        clear: both;
-        margin: 20px auto; /* Ændrer marginen til auto for at centrere vandret */
-        padding: 10px;
-        border: 1px solid #ccc;
-        width: fit-content; /* Sætter bredden til at passe til indholdet */
-        }
-
     </style>
 </head>
 <body>
@@ -39,9 +32,12 @@
         <div id="report1" class="report"></div>
         <div id="report2" class="report"></div>
     </div>
-    <div id="difference"></div>
+    <div id="difference-container">
+        <canvas id="difference-chart" style="max-width: 800px; max-height: 700px;"></canvas>
+    </div>
     <button onclick="loadAndCompareData()">Sammenlign Rapporter</button>
     
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="RHA.js"></script>
 </body>
 </html>

@@ -28,25 +28,77 @@ function displayReport(reportData, elementId) {
 }
 
 function compareReports(rapport1, rapport2) {
-    let result = "<h3>Sammenligning af Rapporter</h3>";
+    const labels = [];
+    const datasets = [];
+
     rapport1.forEach((item1) => {
         const item2 = rapport2.find(item => item.medicinType === item1.medicinType);
         if (item2) {
-            result += `<h4>${item1.medicinType}</h4>`;
-            result += compareItems(item1, item2, "købt");
-            result += compareItems(item1, item2, "anvendt");
-            result += compareItems(item1, item2, "smidt_ud"); // Ændres til "smidt_ud" her
-            result += compareItems(item1, item2, "penge_brugt");
+            labels.push(item1.medicinType);
+            const data = {
+                købt: item2.købt - item1.købt,
+                anvendt: item2.anvendt - item1.anvendt,
+                "smidt ud": item2.smidt_ud - item1.smidt_ud,
+                penge_brugt: item2.penge_brugt - item1.penge_brugt
+            };
+            datasets.push(data);
         }
     });
-    document.getElementById('difference').innerHTML = result;
-}
 
-function compareItems(item1, item2, field) {
-    const value1 = item1[field];
-    const value2 = item2[field];
-    const diff = value2 - value1;
-    const percentDiff = (value1 !== 0) ? (diff / value1 * 100).toFixed(2) : "uendelig";
-    return `<p>Forskel i ${field}: ${diff} (${percentDiff}%)</p>`;
+    const ctx = document.getElementById('difference-chart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Forskel i købt',
+                data: datasets.map(data => data.købt),
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }, {
+                label: 'Forskel i anvendt',
+                data: datasets.map(data => data.anvendt),
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }, {
+                label: 'Forskel i smidt ud',
+                data: datasets.map(data => data['smidt ud']),
+                backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                borderColor: 'rgba(255, 206, 86, 1)',
+                borderWidth: 1
+            }, {
+                label: 'Forskel i penge_brugt',
+                data: datasets.map(data => data.penge_brugt),
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                },
+                legend: {
+                    position: 'top'
+                },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    offset: 4, // Juster lodret offset for datalabels (standardværdi er 0)
+                    formatter: function(value, context) {
+                        return value;
+                    }
+                }
+            }
+        }
+    });
 }
-
