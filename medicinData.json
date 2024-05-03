@@ -1,45 +1,85 @@
 {
     "indkøb": [
         {
-            "medicinType": "Præperat A",
-            "stk": 200,
-            "beløb": 5000
+            "DatoPrintet": "2024-05-03",
+            "Medicin": "Præparat A",
+            "Antal": 200,
+            "Beløb": 5000,
+            "Tidsperiode": "2024-05",
+            "Hospital": "Rigshospitalet",
+            "Afdeling": "Medicinsk Afdeling",
+            "Afsnit": "Afsnit 1"
         },
         {
-            "medicinType": "Præperat B",
-            "købt": 500,
-            "beløb": 40000
+            "DatoPrintet": "2024-05-03",
+            "Medicin": "Præparat B",
+            "Antal": 500,
+            "Beløb": 40000,
+            "Tidsperiode": "2024-05",
+            "Hospital": "Rigshospitalet",
+            "Afdeling": "Medicinsk Afdeling",
+            "Afsnit": "Afsnit 1"
         }
     ],
 
     "forbrug": [
         {
-            "medicinType": "Præperat A",
-            "stk": 100,
+            "DatoPrintet": "2024-05-03",
+            "Medicin": "Præparat A",
+            "Antal": 100,
+            "Tidsperiode": "2024-05",
+            "Hospital": "Rigshospitalet",
+            "Afdeling": "Medicinsk Afdeling",
+            "Afsnit": "Afsnit 1"
         },
         {
-            "medicinType": "Præperat B",
-            "forbrugt": 250,
+            "DatoPrintet": "2024-05-03",
+            "Medicin": "Præparat B",
+            "Antal": 250,
+            "Tidsperiode": "2024-05",
+            "Hospital": "Rigshospitalet",
+            "Afdeling": "Medicinsk Afdeling",
+            "Afsnit": "Afsnit 1"
         }
-    ]
-       "kassation": [
+    ],
+    "kassation": [
         {
-            "medicinType": "Præperat A",
-            "kasseret": 50,
+            "DatoPrintet": "2024-05-03",
+            "Medicin": "Præparat A",
+            "Antal": 50,
+            "Tidsperiode": "2024-05",
+            "Hospital": "Rigshospitalet",
+            "Afdeling": "Medicinsk Afdeling",
+            "Afsnit": "Afsnit 1"
         },
         {
-            "medicinType": "Præperat B",
-            "købt": 100,
+            "DatoPrintet": "2024-05-03",
+            "Medicin": "Præparat B",
+            "Antal": 100,
+            "Tidsperiode": "2024-05",
+            "Hospital": "Rigshospitalet",
+            "Afdeling": "Medicinsk Afdeling",
+            "Afsnit": "Afsnit 1"
         }
-    ]
-        "lagerbeholdning": [    
+    ],
+    "lagerbeholdning": [    
         {
-            "medicinType": "Præperat A",
-            "stk": 30,
+            "DatoPrintet": "2024-05-03",
+            "Medicin": "Præparat A",
+            "Antal": 30,
+            "Tidsperiode": "2024-05",
+            "Hospital": "Rigshospitalet",
+            "Afdeling": "Medicinsk Afdeling",
+            "Afsnit": "Afsnit 1"
         },
         {
-            "medicinType": "Præperat B",
-            "lager": 40,
+            "DatoPrintet": "2024-05-03",
+            "Medicin": "Præparat B",
+            "Antal": 40,
+            "Tidsperiode": "2024-05",
+            "Hospital": "Rigshospitalet",
+            "Afdeling": "Medicinsk Afdeling",
+            "Afsnit": "Afsnit 1"
         }
     ]
 }
