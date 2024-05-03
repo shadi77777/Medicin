@@ -16,12 +16,11 @@
             "Antal": 500,
             "Beløb": 40000,
             "Tidsperiode": "2024-05",
-            "Hospital": "Rigshospitalet",
-            "Afdeling": "Medicinsk Afdeling",
-            "Afsnit": "Afsnit 1"
+            "Hospital": "Nordsjællands Hospital",
+            "Afdeling": "Kirurgisk Afdeling",
+            "Afsnit": "Afsnit 2"
         }
     ],
-
     "forbrug": [
         {
             "DatoPrintet": "2024-05-03",
@@ -37,9 +36,9 @@
             "Medicin": "Præparat B",
             "Antal": 250,
             "Tidsperiode": "2024-05",
-            "Hospital": "Rigshospitalet",
-            "Afdeling": "Medicinsk Afdeling",
-            "Afsnit": "Afsnit 1"
+            "Hospital": "Nordsjællands Hospital",
+            "Afdeling": "Kirurgisk Afdeling",
+            "Afsnit": "Afsnit 2"
         }
     ],
     "kassation": [
@@ -57,9 +56,9 @@
             "Medicin": "Præparat B",
             "Antal": 100,
             "Tidsperiode": "2024-05",
-            "Hospital": "Rigshospitalet",
-            "Afdeling": "Medicinsk Afdeling",
-            "Afsnit": "Afsnit 1"
+            "Hospital": "Nordsjællands Hospital",
+            "Afdeling": "Kirurgisk Afdeling",
+            "Afsnit": "Afsnit 2"
         }
     ],
     "lagerbeholdning": [    
@@ -77,9 +76,9 @@
             "Medicin": "Præparat B",
             "Antal": 40,
             "Tidsperiode": "2024-05",
-            "Hospital": "Rigshospitalet",
-            "Afdeling": "Medicinsk Afdeling",
-            "Afsnit": "Afsnit 1"
+            "Hospital": "Nordsjællands Hospital",
+            "Afdeling": "Kirurgisk Afdeling",
+            "Afsnit": "Afsnit 2"
         }
     ]
 }
