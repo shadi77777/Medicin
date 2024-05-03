@@ -2,42 +2,33 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <title>Medicin Produkt Sammenligning</title>
-    <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .report {
-            width: 49%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        #difference-container {
-            max-width: 800px; /* Begræns containerens bredde */
-            margin: 20px auto; /* Centrer containeren */
-        }
-        #difference-chart {
-            max-height: 600px; /* Begræns grafens højde */
-        }
-        body {
-            font-family: Arial, sans-serif;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicin Spild Rapport</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Sammenligning af Medicin Rapporter</h1>
-    <div class="container">
-        <div id="report1" class="report"></div>
-        <div id="report2" class="report"></div>
+    <h1>Medicin Spild Rapport</h1>
+    <div>
+        <label for="hospitalSelect">Vælg Hospital:</label>
+        <select id="hospitalSelect" onchange="updateAfdelinger()">
+            <!-- Dynamically filled by JavaScript -->
+        </select>
     </div>
-    <div id="difference-container">
-        <canvas id="difference-chart" style="max-width: 800px; max-height: 700px;"></canvas>
+    <div>
+        <label for="afdelingSelect">Vælg Afdeling:</label>
+        <select id="afdelingSelect" onchange="updateAfsnit()">
+            <!-- Dynamically filled by JavaScript -->
+        </select>
     </div>
-    <button onclick="loadAndCompareData()">Sammenlign Rapporter</button>
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <div>
+        <label for="afsnitSelect">Vælg Afsnit:</label>
+        <select id="afsnitSelectgi" onchange="displayData()">
+            <!-- Dynamically filled by JavaScript -->
+        </select>
+    </div>
+    <div id="report">
+        <!-- Data displayed here -->
+    </div>
     <script src="RHA.js"></script>
 </body>
 </html>

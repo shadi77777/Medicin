@@ -1,60 +1,30 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0; /* Juster baggrundsfarven efter behov */
-}
-
-.header {
-    background-color: #1E90FF; /* Blå baggrund som på billedet */
-    padding: 20px 50px; /* Tilpas padding for at matche billedet */
-    color: white;
-    text-align: center;
-}
-
-.header-content {
-    display: inline-block;
-    text-align: left;
-}
-
-.navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    background-color: #333; /* Mørk baggrund for navigationsmenuen */
-    border-radius: 10px; /* Giver boxene rundede hjørner */
-    display: flex; /* Gør listen vandret */
-}
-
-.navigation li {
-    float: left;
-}
-
-.navigation li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border-right: 1px solid #bbb; /* Tilføjer en separator mellem menupunkterne */
-}
-
-.navigation li a:hover {
-    background-color: #111; /* Tilføjer en hover-effekt for menuen */
-}
-
-/* Fjerner border fra det sidste element i navigationsmenuen */
-.navigation li:last-child a {
-    border-right: none;
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
 }
 
 h1 {
-    margin-top: 30px; /* Tilpas afstanden over hovedtitlen efter behov */
+    color: #333;
 }
 
-.main-content {
-    padding: 20px; /* Tilpas efter behov */
-    /* Indholdet af hospitalets styringssystem vil være her */
+div {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+select {
+    padding: 8px;
+    width: 200px;
+}
+
+#report {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
