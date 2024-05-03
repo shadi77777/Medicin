@@ -1,34 +1,44 @@
 {
-    "rapport1": [
+    "indkøb": [
         {
-            "medicinType": "Type A",
-            "købt": 150,
-            "anvendt": 120,
-            "smidt_ud": 20,
-            "penge_brugt": 5000
+            "medicinType": "Præperat A",
+            "stk": 200,
+            "beløb": 5000
         },
         {
-            "medicinType": "Type B",
-            "købt": 100,
-            "anvendt": 80,
-            "smidt_ud": 15,
-            "penge_brugt": 3000
+            "medicinType": "Præperat B",
+            "købt": 500,
+            "beløb": 40000
         }
     ],
-    "rapport2": [
+    "forbrug": [
         {
-            "medicinType": "Type A",
-            "købt": 180,
-            "anvendt": 150,
-            "smidt_ud": 25,
-            "penge_brugt": 5500
+            "medicinType": "Præperat A",
+            "stk": 100,
         },
         {
-            "medicinType": "Type B",
-            "købt": 90,
-            "anvendt": 85,
-            "smidt_ud": 5,
-            "penge_brugt": 2800
+            "medicinType": "Præperat B",
+            "forbrugt": 250,
+        }
+    ]
+        "kassation": [
+        {
+            "medicinType": "Præperat A",
+            "kasseret": 50,
+        },
+        {
+            "medicinType": "Præperat B",
+            "købt": 100,
+        }
+    ]
+        "lagerbeholdning": [
+        {
+            "medicinType": "Præperat A",
+            "stk": 30,
+        },
+        {
+            "medicinType": "Præperat B",
+            "lager": 40,
         }
     ]
 }
