@@ -171,6 +171,55 @@ function displayData() {
     return;
   }
   const selectedSection = sectionSelect.value;
+  const hospitalSelect = document.getElementById("hospitalSelect");
+  const departmentSelect = document.getElementById("afdelingSelect");
+  if (!hospitalSelect || !departmentSelect) {
+    console.error(
+      "HospitalSelect eller DepartmentSelect elementet blev ikke fundet"
+    );
+    return;
+  }
+
+  const selectedHospital = hospitalSelect.value;
+  const selectedDepartment = departmentSelect.value;
+  const results = calculateWaste(data);
+  const locationKey = `${selectedHospital} - ${selectedDepartment} - ${selectedSection}`;
+  const locationData = results[locationKey];
+  const reportDiv = document.getElementById("report");
+
+  if (!reportDiv) {
+    console.error("ReportDiv elementet blev ikke fundet");
+    return;
+  }
+
+  reportDiv.innerHTML = "";
+  if (locationData) {
+    const meds = locationData["Præparat A"]; // Assuming Præparat A is what you want displayed
+    if (meds) {
+      const spildContent = `Spild/Stk der mangler: <span class='big-number'>${meds.spild}</span>`;
+      const spildP = document.createElement("p");
+      spildP.innerHTML = spildContent;
+      reportDiv.appendChild(spildP);
+
+      const kostContent = `Spildomkostninger/Samlet beløb: <span class='big-number'>${meds.spildBeløb.toFixed(
+        2
+      )} kr</span>`;
+      const kostP = document.createElement("p");
+      kostP.innerHTML = kostContent;
+      reportDiv.appendChild(kostP);
+    }
+  } else {
+    reportDiv.textContent = "Ingen data tilgængelig for valgt kombination.";
+  }
+}
+
+/* function displayData() {
+  const sectionSelect = document.getElementById("afsnitSelect");
+  if (!sectionSelect) {
+    console.error("AfsnitSelect elementet blev ikke fundet");
+    return;
+  }
+  const selectedSection = sectionSelect.value;
 
   const hospitalSelect = document.getElementById("hospitalSelect");
   const departmentSelect = document.getElementById("afdelingSelect");
@@ -213,7 +262,7 @@ function displayData() {
   } else {
     reportDiv.textContent = "Ingen data tilgængelig for valgt kombination.";
   }
-}
+} */
 
 function calculateWaste(data) {
   const results = {};

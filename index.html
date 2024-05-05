@@ -1,34 +1,65 @@
 <!DOCTYPE html>
-<html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Medicin Spild Rapport</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <h1>Medicin Spild Rapport</h1>
-    <div>
-        <label for="hospitalSelect">Vælg Hospital:</label>
-        <select id="hospitalSelect" onchange="updateAfdelinger()">
-            <!-- Dynamically filled by JavaScript -->
-        </select>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <img
+        src="https://www.regionh.dk/til-fagfolk/Om-Region-H/regionens-design/logo-og-grundelementer/logo-til-print-og-web/Publishingimages/Apoteket_Logo_RGB.jpg"
+        alt="Logo"
+        class="logo"
+      />
+      <div class="title-and-user">
+        <span class="title">Medicin Spild Rapport</span>
+        <div class="user-info">
+          <span>Lise Jensen</span>
+          <img
+            src="https://files.oaiusercontent.com/file-6nYg6TOlvgPjbktYOBhPdsBD?se=2024-05-05T14%3A46%3A17Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D7a5daccb-b887-4dc8-b3b9-75dbc071e20d.webp&sig=FCnmosMlEW2V4qSUP2gyTI4ci14h/GRG1xIcJaMl5IE%3D"
+            alt="Logo"
+            class="logo"
+          />
+        </div>
+      </div>
     </div>
-    <div>
-        <label for="afdelingSelect">Vælg Afdeling:</label>
-        <select id="afdelingSelect" onchange="updateAfsnit()">
-            <!-- Dynamically filled by JavaScript -->
-        </select>
-    </div>
-    <div>
-        <label for="afsnitSelect">Vælg Afsnit:</label>
-        <select id="afsnitSelect" onchange="displayData()">
-            <!-- Dynamically filled by JavaScript -->
-        </select>
-    </div>
-    <div id="report">
-        <!-- Data displayed here -->
+    <div class="container">
+      <div class="sidebar">
+        <button class="menu-button">Hjem</button>
+        <button class="menu-button">Rapporter</button>
+        <button class="menu-button">Indstillinger</button>
+        <button class="menu-button">Hjælp</button>
+      </div>
+      <div class="main-content">
+        <div class="selectors">
+          <div>
+            <label for="hospitalSelect">Vælg Hospital:</label>
+            <select id="hospitalSelect" onchange="updateAfdelinger()"></select>
+          </div>
+          <div>
+            <label for="afdelingSelect">Vælg Afdeling:</label>
+            <select id="afdelingSelect" onchange="updateAfsnit()"></select>
+          </div>
+          <div>
+            <label for="afsnitSelect">Vælg Afsnit:</label>
+            <select id="afsnitSelect" onchange="displayData()"></select>
+          </div>
+        </div>
+        <div id="report" class="card-container">
+          <!-- Dynamisk data vises her -->
+          <div class="card">
+            <h3>Spild/Stk der mangler:</h3>
+            <p class="big-number">20</p>
+          </div>
+          <div class="card">
+            <h3>Spildomkostninger/Samlet beløb:</h3>
+            <p class="big-number">100000.00 kr</p>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="RHA.js"></script>
-</body>
+  </body>
 </html>

@@ -1,30 +1,152 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+.top-bar {
+  background-color: #ffffff; /* Hvid baggrund */
+  color: #636c6f;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-h1 {
-    color: #333;
+.logo {
+  height: 50px;
+  margin-right: 20px; /* Tilføjer plads mellem logo og titel */
 }
 
-div {
-    margin-bottom: 20px;
+.title-and-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
+.title {
+  font-size: 24px;
+  flex-grow: 1; /* Sørger for at titlen udvider sig og skubber brugerinfo til højre */
+}
+
+.user-info {
+  font-size: 16px;
+  display: flex;
+  align-items: center; /* Centrerer teksten og billedet vertikalt */
+}
+
+.user-info img {
+  border-radius: 50%; /* Gør billedet rundt */
+  width: 50px; /* Sæt en fast størrelse for billedet */
+  height: 50px; /* Sæt en fast størrelse for billedet */
+  margin-left: 10px; /* Tilføjer plads mellem navnet og billedet */
+}
+
+.container {
+  display: flex;
+  height: calc(100% - 50px);
+}
+
+.sidebar {
+  background-color: #487d83; /* Dark teal */
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.menu-button:hover {
+  background-color: #56959c; /* Slightly darker teal */
+}
+
+/* Main content and overall layout styling */
+.main-content {
+  flex: 1;
+  padding: 40px; /* Provides ample space around the content */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content for better visual appeal */
+  width: 100%;
+  max-width: none; /* Allows content to expand as needed */
+}
+
+/* Styling for selector containers */
+.selectors {
+  width: 100%; /* Full width to align with the page layout */
+  display: flex;
+  justify-content: space-between; /* Distributes selectors evenly across the available space */
+  margin-bottom: 40px; /* Adds space below the selector area */
+}
+
+/* Individual selector styling */
+.selectors div {
+  flex: 1; /* Each selector takes equal space */
+  margin: 0 10px; /* Adds horizontal spacing between selectors */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px; /* Rounded corners for a modern look */
+}
+
+/* Styling for dropdown elements */
+select,
 label {
-    margin-right: 10px;
+  width: 100%; /* Full width to utilize the container space */
+  font-size: 20px; /* Larger font for easier readability */
+  margin-bottom: 20px; /* Space below each dropdown for clean separation */
 }
 
-select {
-    padding: 8px;
-    width: 200px;
+/* Container for content cards */
+.card-container {
+  width: 100%; /* Utilizes full width for alignment and proportion */
+  display: flex;
+  justify-content: space-around; /* Evenly spaces out cards */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
 }
 
-#report {
-    margin-top: 20px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* Large number display styling */
+.big-number {
+  font-size: 72px; /* Very large font size for impact */
+  color: #487d83; /* Dark teal for brand consistency */
+  margin-top: 10px; /* Space below the title */
+}
+.main-content .selectors div {
+  flex: 1;
+  margin: 0 10px;
+  border: none; /* Remove border */
+  background-color: transparent; /* Remove background color */
+  padding: 0; /* Remove padding */
+  font-size: 16px; /* Decrease font size */
+  color: #677074; /* Set text color */
+  cursor: pointer;
+}
+
+.main-content .selectors div:hover {
+  color: #487d83; /* Change text color on hover */
+}
+.main-content select {
+  appearance: none; /* Remove default select arrow */
+  background-color: #ffffff; /* White background */
+  border: 1px solid white; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Adjust padding for better appearance */
+  font-size: 16px; /* Decrease font size */
+  color: #636c6f; /* Set text color */
+  cursor: pointer; /* Show pointer cursor on hover */
 }
