@@ -22,7 +22,7 @@ const data = {
     },
     {
       DatoPrintet: "2024-05-03",
-      Medicin: "Præparat c",
+      Medicin: "Præparat A",
       Antal: 200,
       Beløb: 5000,
       Tidsperiode: "2024-05",
