@@ -22,6 +22,16 @@ const data = {
     },
     {
       DatoPrintet: "2024-05-03",
+      Medicin: "Præparat c",
+      Antal: 200,
+      Beløb: 5000,
+      Tidsperiode: "2024-05",
+      Hospital: "Bispebjerg Hospital",
+      Afdeling: "Medicinsk Afdeling",
+      Afsnit: "Afsnit 1",
+    },
+    {
+      DatoPrintet: "2024-05-03",
       Medicin: "Præparat b",
       Antal: 100,
       Beløb: 2000,
@@ -311,36 +321,39 @@ function displayData() {
 
 
 function calculateWaste(data) {
-    const results = {};
-    // Initialisér og beregn totaler for indkøb, forbrug, kassation og lager
-    ['indkøb', 'forbrug', 'kassation', 'lagerbeholdning'].forEach(category => {
-        data[category].forEach(item => {
-            const {Medicin, Antal, Hospital, Afdeling, Afsnit, Beløb} = item;
-            const key = `${Hospital} - ${Afdeling} - ${Afsnit}`;
-            if (!results[key]) results[key] = {};
-            if (!results[key][Medicin]) {
-                results[key][Medicin] = {indkøb: 0, forbrug: 0, kassation: 0, lager: 0, spild: 0, spildBeløb: 0, prisPerEnhed: 0};
-            }
-            results[key][Medicin][category.replace('beholdning', '')] += Antal;
+  const results = {};
+  // Initialisér og beregn totaler for indkøb, forbrug, kassation og lager
+  ['indkøb', 'forbrug', 'kassation', 'lagerbeholdning'].forEach(category => {
+      data[category].forEach(item => {
+          const {Medicin, Antal, Hospital, Afdeling, Afsnit, Beløb} = item;
+          const key = `${Hospital} - ${Afdeling} - ${Afsnit}`;
+          if (!results[key]) results[key] = {};
+          if (!results[key][Medicin]) {
+              results[key][Medicin] = {indkøb: 0, forbrug: 0, kassation: 0, lager: 0, spild: 0, spildBeløb: 0, prisPerEnhed: 0};
+          }
+          results[key][Medicin][category.replace('beholdning', '')] += Antal;
 
-            // Opdater pris per enhed hvis det er et 'indkøb'
-            if (category === 'indkøb') {
-                results[key][Medicin].prisPerEnhed = Beløb;
-            }
-        });
-    });
+          // Opdater pris per enhed hvis det er et 'indkøb'
+          if (category === 'indkøb') {
+              results[key][Medicin].prisPerEnhed = Beløb;
+          }
+      });
+  });
 
-    // Beregn spild og spildomkostninger
-    for (let location in results) {
-        for (let medicin in results[location]) {
-            const meds = results[location][medicin];
-            meds.spild = meds.indkøb - meds.forbrug - meds.kassation - meds.lager;
-            // Beregn omkostningerne ved spild
-            meds.spildBeløb = meds.spild * meds.prisPerEnhed
-            console.log(`Beregnet for ${medicin}: Spild = ${meds.spild}, Pris per enhed = ${meds.prisPerEnhed}, SpildBeløb = ${meds.spildBeløb}`);
-        }
-    }
+  // Beregn spild og spildomkostninger
+  for (let location in results) {
+      for (let medicin in results[location]) {
+          const meds = results[location][medicin];
+          meds.spild = meds.indkøb - meds.forbrug - meds.kassation - meds.lager;
+          // Juster spildet til 0 hvis det er negativt
+          if (meds.spild < 0) {
+              meds.spild = 0;
+          }
+          // Beregn omkostningerne ved spild
+          meds.spildBeløb = meds.spild * meds.prisPerEnhed
+          console.log(`Beregnet for ${medicin}: Spild = ${meds.spild}, Pris per enhed = ${meds.prisPerEnhed}, SpildBeløb = ${meds.spildBeløb}`);
+      }
+  }
 
-    return results;
+  return results;
 }
-
