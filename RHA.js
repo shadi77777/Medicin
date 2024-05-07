@@ -218,18 +218,40 @@ const data = {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-  const hospitalSelect = document.getElementById("hospitalSelect");
-  const uniqueHospitals = new Set(data.indkøb.map((item) => item.Hospital));
-
-  uniqueHospitals.forEach((hospital) => {
-    const option = document.createElement("option");
-    option.value = hospital;
-    option.textContent = hospital;
-    hospitalSelect.appendChild(option);
+    const hospitalSelect = document.getElementById("hospitalSelect");
+    const uniqueHospitals = {};
+  
+    // Gennemgå data.indkøb for at tilføje alle hospitaler
+    data.indkøb.forEach((item) => {
+      uniqueHospitals[item.Hospital] = true;
+    });
+  
+    // Gennemgå data.forbrug for at tilføje alle hospitaler
+    data.forbrug.forEach((item) => {
+      uniqueHospitals[item.Hospital] = true;
+    });
+  
+    // Gennemgå data.kassation for at tilføje alle hospitaler
+    data.kassation.forEach((item) => {
+      uniqueHospitals[item.Hospital] = true;
+    });
+  
+    // Gennemgå data.lagerbeholdning for at tilføje alle hospitaler
+    data.lagerbeholdning.forEach((item) => {
+      uniqueHospitals[item.Hospital] = true;
+    });
+  
+    // Tilføj hvert unikt hospital til dropdown-menuen
+    Object.keys(uniqueHospitals).forEach((hospital) => {
+      const option = document.createElement("option");
+      option.value = hospital;
+      option.textContent = hospital;
+      hospitalSelect.appendChild(option);
+    });
+  
+    updateAfdelinger(); // Opdater afdelinger og afsnit når siden indlæses
   });
-
-  updateAfdelinger(); // Opdater afdelinger og afsnit når siden indlæses
-});
+  
 
 function updateAfdelinger() {
   const hospitalSelect = document.getElementById("hospitalSelect");
