@@ -17,21 +17,30 @@
         <span class="title">Medicin Spild Rapport</span>
         <div class="user-info">
           <span>Lise Jensen</span>
-          <img
-            src="https://files.oaiusercontent.com/file-6nYg6TOlvgPjbktYOBhPdsBD?se=2024-05-05T14%3A46%3A17Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D7a5daccb-b887-4dc8-b3b9-75dbc071e20d.webp&sig=FCnmosMlEW2V4qSUP2gyTI4ci14h/GRG1xIcJaMl5IE%3D"
-            alt="Logo"
-            class="logo"
-          />
+          <img src=/image.png alt="Logo" class="logo" />
         </div>
       </div>
     </div>
     <div class="container">
       <div class="sidebar">
-        <button class="menu-button">Hjem</button>
-        <button class="menu-button">Rapporter</button>
-        <button class="menu-button">Indstillinger</button>
-        <button class="menu-button">Hjælp</button>
+        <!-- Grouping top menu buttons -->
+        <div class="menu-group">
+          <button class="menu-button">Hjem</button>
+          <button class="menu-button" id="rapportKnapOverskrift">
+            Rapporter:
+          </button>
+          <button class="menu-button">Indkøbsrapport</button>
+          <button class="menu-button">Forbrugsrapport</button>
+          <button class="menu-button">Kassationrapport</button>
+          <button class="menu-button">Svindrapport</button>
+        </div>
+        <!-- Grouping bottom menu buttons -->
+        <div class="bottom-buttons">
+          <button class="menu-button">Indstillinger</button>
+          <button class="menu-button">Hjælp</button>
+        </div>
       </div>
+
       <div class="main-content">
         <div class="selectors">
           <div>

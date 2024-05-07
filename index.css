@@ -9,7 +9,7 @@ body {
   overflow: hidden;
 }
 .top-bar {
-  background-color: #ffffff; /* Hvid baggrund */
+  background-color: #ffffff;
   color: #636c6f;
   padding: 10px 20px;
   display: flex;
@@ -52,6 +52,17 @@ body {
   height: calc(100% - 50px);
 }
 
+#rapportKnapOverskrift {
+  font: bolder 16px Arial;
+  cursor: default;
+}
+
+#rapportKnapOverskrift:hover {
+  background-color: initial; /* Resets any background changes on hover */
+  color: white; /* Keeps the text color the same on hover */
+  cursor: default;
+}
+
 .sidebar {
   background-color: #487d83; /* Dark teal */
   flex: 0 0 200px;
@@ -59,6 +70,20 @@ body {
   flex-direction: column;
   padding: 10px;
   overflow-y: auto;
+  height: 100%; /* Ensures it takes full height */
+}
+
+.menu-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows this group to expand and push the buttons at the bottom */
+}
+
+.bottom-buttons {
+  margin-top: auto; /* Pushes the buttons to the bottom */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px; /* Adds space below the buttons */
 }
 
 .menu-button {
@@ -74,7 +99,7 @@ body {
 }
 
 .menu-button:hover {
-  background-color: #56959c; /* Slightly darker teal */
+  background-color: #56959c; /* Slightly darker teal for hover effect */
 }
 
 /* Main content and overall layout styling */
