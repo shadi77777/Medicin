@@ -88,7 +88,7 @@ class HospitalDataManager {
         const locationData = results[locationKey] || {};
         Object.keys(locationData).forEach(medicin => {
             const info = locationData[medicin];
-            const content = `Medicin: ${medicin}, Indkøbt: ${info.indkøb}, Forbrugt: ${info.forbrug}, Kasseret: ${info.kassation}, Lager: ${info.lager}, Spild: ${info.spild}, Spildomkostninger: ${info.spildBeløb.toFixed(2)} kr.`;
+            const content = `Medicin: ${medicin}, Indkøbt: ${info.indkøb}, Forbrugt: ${info.forbrug}, Kasseret: ${info.kassation}, Lager: ${info.lager}, Svind: ${info.spild}, Svindomkostninger: ${info.spildBeløb.toFixed(2)} kr.`;
             const p = document.createElement("p");
             p.textContent = content;
             p.className = "medication-info";
